@@ -1,30 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kelasku_tubes/screens/register_screen.dart';
 
-
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class LoginScreen1 extends StatefulWidget {
+  const LoginScreen1({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<LoginScreen1> createState() => _LoginScreen1State();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController _emailController = TextEditingController();
+class _LoginScreen1State extends State<LoginScreen1> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
 
+class LoginScreen extends StatelessWidget {
+  LoginScreen({Key? key}) : super(key: key);
+
+  TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
   bool viewVisible = true;
 
-  void hideWidget() {
+  /*void hideWidget() {
     setState(() {
       viewVisible = !viewVisible;
     });
-  }
-=======
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
-
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -118,8 +121,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {
-                    },
+                    onPressed: () {},
                     child: Container(
                       width: double.infinity,
                       padding: const EdgeInsets.symmetric(vertical: 10),
@@ -138,7 +140,6 @@ class LoginScreen extends StatelessWidget {
                           color: Colors.orange.shade900,
                         ),
                       ),
-                      
                     ),
                   ),
                 ],
