@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kelasku_tubes/screens/register_screen.dart';
 
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -20,6 +21,10 @@ class _LoginScreenState extends State<LoginScreen> {
       viewVisible = !viewVisible;
     });
   }
+=======
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
