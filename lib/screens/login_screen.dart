@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kelasku_tubes/screens/register_screen.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   TextEditingController _emailController = TextEditingController();
 
   TextEditingController _passwordController = TextEditingController();
 
-  bool password = false;
+  bool viewVisible = true;
+
+  void hideWidget() {
+    setState(() {
+      viewVisible = !viewVisible;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +41,8 @@ class LoginScreen extends StatelessWidget {
                         'Login',
                         style: TextStyle(
                           fontSize: 16,
-                          color: Colors.orange,
+                          fontWeight: FontWeight.w400,
+                          color: Color.fromARGB(255, 230, 81, 0),
                         ),
                       ),
                       GestureDetector(
@@ -72,7 +84,8 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 20),
-                        TextField(
+                        TextFormField(
+                          obscureText: viewVisible,
                           controller: _passwordController,
                           decoration: const InputDecoration(
                             hintText: 'Password',
@@ -86,17 +99,14 @@ class LoginScreen extends StatelessWidget {
                             ),
                             // suffixIcon: IconButton(
                             //   icon: Icon(
-                            //     password ? Icons.visibility_off : Icons.visibility,
+                            //     viewVisible
+                            //         ? Icons.visibility
+                            //         : Icons.visibility_off,
                             //     color: Colors.grey,
                             //   ),
-                            //   onPressed: (){
-                            //     setState(() {
-                            //       password = !password;
-                            //     });
-                            //   },
+                            //   onPressed: _hideWidget,
                             // ),
                           ),
-                          obscureText: password,
                         ),
                         const SizedBox(height: 20),
                       ],
@@ -119,7 +129,8 @@ class LoginScreen extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 16,
-                          color: Colors.orange,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.orange.shade900,
                         ),
                       ),
                       
