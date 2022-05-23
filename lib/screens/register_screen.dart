@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_kelasku_tubes/model/user_model.dart';
 import 'package:flutter_kelasku_tubes/screens/home_screen.dart';
 import 'package:flutter_kelasku_tubes/screens/screens.dart';
+import 'package:flutter_kelasku_tubes/widgets/classes_dropdown_widget.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -23,6 +24,22 @@ class _RegisterScreenState extends State<RegisterScreen> {
   void _hidePassword() {
     setState(() {
       _visible = !_visible;
+    });
+  }
+
+  String selectedDropdown = "Pilih Kelas";
+
+  List<String> classes = [
+    "Pilih Kelas",
+    "12-MM 1",
+    "12-MM 2",
+    "12-MM 3",
+  ];
+
+  void onDropdownChanged(String? value) {
+    return setState(() {
+      selectedDropdown = value.toString();
+      _classController = TextEditingController(text: selectedDropdown);
     });
   }
 
@@ -75,6 +92,29 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       height: MediaQuery.of(context).size.height * 0.5,
                       child: ListView(
                         children: [
+                          TextFormField(
+                          controller: _nameController,
+                          decoration: const InputDecoration(
+                            labelText: 'Name',
+                            labelStyle: TextStyle(
+                              fontSize: 14,
+                              color: Colors.grey,
+                            ),
+                          ),
+                          validator: (value){
+                              if(value!.isEmpty)
+                              {
+                                return 'Please enter name';
+                              }
+                              return null;
+                            },
+                        ),
+                        const SizedBox(height: 20),
+                        ClassesDropdown(
+                          selectedDropdown: selectedDropdown,
+                          listItem: classes,
+                          onDropdownChanged: onDropdownChanged,
+                        ),
                           TextFormField(
                             keyboardType: TextInputType.emailAddress,
                             controller: _emailController,
@@ -130,6 +170,37 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ],
                       ),
                     ),
+                    TextButton(
+                    onPressed: () {
+                        if(formKey.currentState!.validate()){
+                          formKey.currentState!.save();
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HomeScreen(),
+                            ),
+                          );
+                        }
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.orange.shade100,
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                      ),
+                      child: Text(
+                        'Register',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.orange.shade700,
+                        ),
+                      ),
+                    ),
+                  ),
                   ],
                 ),
               ),
