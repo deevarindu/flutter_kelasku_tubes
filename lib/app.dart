@@ -20,8 +20,8 @@ class App extends StatelessWidget {
           foregroundColor: Colors.black,
         ),
       ),
-      home: Scaffold(
-        body: LoginScreen(),
+      home: const Scaffold(
+        body: ProfileScreen(),
       ),
     );
   }
