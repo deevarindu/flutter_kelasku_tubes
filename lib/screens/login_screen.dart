@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kelasku_tubes/screens/home_screen.dart';
 import 'package:flutter_kelasku_tubes/screens/register_screen.dart';
 
 class LoginScreen1 extends StatefulWidget {
@@ -9,49 +10,44 @@ class LoginScreen1 extends StatefulWidget {
 }
 
 class _LoginScreen1State extends State<LoginScreen1> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
-class LoginScreen extends StatelessWidget {
-  LoginScreen({Key? key}) : super(key: key);
-
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
-  bool viewVisible = true;
+  bool _visible = false;
+  final formKey = GlobalKey<FormState>();
+  String email = '';
 
-  /*void hideWidget() {
+  void _hidePassword() {
     setState(() {
-      viewVisible = !viewVisible;
+      _visible = !_visible;
     });
-  }*/
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
-              height: MediaQuery.of(context).size.height,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      const Text(
-                        'Login',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                          color: Color.fromARGB(255, 230, 81, 0),
-                        ),
+        child: Form(
+          key: formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+                height: MediaQuery.of(context).size.height,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        const Text(
+                          'Login',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: Color.fromARGB(255, 230, 81, 0),
+                          ),
                       ),
                       GestureDetector(
                         onTap: () {
@@ -66,86 +62,131 @@ class LoginScreen extends StatelessWidget {
                           'Register',
                           style: TextStyle(
                             fontSize: 16,
-                            color: Colors.grey,
+                            fontWeight: FontWeight.w500,
+                            color: Color.fromARGB(255, 230, 81, 0),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    height: MediaQuery.of(context).size.height * 0.5,
-                    child: ListView(
-                      children: [
-                        TextField(
-                          keyboardType: TextInputType.emailAddress,
-                          controller: _emailController,
-                          decoration: const InputDecoration(
-                            hintText: 'Email',
-                            hintStyle: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 14,
-                            ),
-                            prefixIcon: Icon(
-                              Icons.email,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => RegisterScreen(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'Register',
+                            style: TextStyle(
+                              fontSize: 16,
                               color: Colors.grey,
                             ),
                           ),
                         ),
-                        const SizedBox(height: 20),
-                        TextFormField(
-                          obscureText: viewVisible,
-                          controller: _passwordController,
-                          decoration: const InputDecoration(
-                            hintText: 'Password',
-                            hintStyle: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 14,
-                            ),
-                            prefixIcon: Icon(
-                              Icons.lock,
-                              color: Colors.grey,
-                            ),
-                            // suffixIcon: IconButton(
-                            //   icon: Icon(
-                            //     viewVisible
-                            //         ? Icons.visibility
-                            //         : Icons.visibility_off,
-                            //     color: Colors.grey,
-                            //   ),
-                            //   onPressed: _hideWidget,
-                            // ),
-                          ),
-                        ),
-                        const SizedBox(height: 20),
                       ],
                     ),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Container(
-                      width: double.infinity,
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.orange.shade100,
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(10),
-                        ),
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.5,
+                      child: ListView(
+                        children: [
+                          TextFormField(
+                            keyboardType: TextInputType.emailAddress,
+                            controller: _emailController,
+                            decoration: InputDecoration(
+                              labelText: "Email",
+                              labelStyle: TextStyle(
+                              fontSize: 14,
+                              color: Colors.grey,
+                            ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              )
+                            ),
+                            validator: (value){
+                              if(value!.isEmpty){
+                                return 'Please enter email';
+                              }
+                              if(!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)){
+                                return 'Please enter email valid';
+                              }
+                                return null;
+                            },
+                            onSaved: (value){
+                              email = value!;
+                      },
+                          ),
+                          const SizedBox(height: 20),
+                          TextFormField(
+                            controller: _passwordController,
+                            decoration: InputDecoration(
+                              labelText: "Password",
+                              labelStyle: TextStyle(
+                              fontSize: 14,
+                              color: Colors.grey,
+                            ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              suffixIcon: Icon(
+                                Icons.visibility,
+                                color: Color.fromARGB(255, 230, 81, 0),)
+                            ),
+                            obscureText: _visible,
+                            onTap: _hidePassword,
+                            validator: (value){
+                              if(value!.isEmpty)
+                              {
+                                return 'Please enter password';
+                              }
+                              else if (value.length > 7 || value.length < 5)
+                              {
+                                return 'Password must be 6 character';
+                              }
+                              return null;
+                            },
+                          ),
+                          const SizedBox(height: 20),
+                        ],
                       ),
-                      child: Text(
-                        'Login',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        if(formKey.currentState!.validate()){
+                          formKey.currentState!.save();
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HomeScreen(),
+                            ),
+                          );
+                        }
+                      
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        decoration: BoxDecoration(
                           color: Colors.orange.shade900,
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                        ),
+                        child: Text(
+                          'Login',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                          color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
