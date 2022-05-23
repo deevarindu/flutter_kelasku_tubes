@@ -149,7 +149,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
                         width: double.infinity,
                         padding: const EdgeInsets.symmetric(vertical: 10),
                         decoration: BoxDecoration(
-                          color: Colors.orange.shade100,
+                          color: Colors.orange.shade900,
                           borderRadius: const BorderRadius.all(
                             Radius.circular(10),
                           ),
@@ -159,8 +159,8 @@ class _LoginScreen1State extends State<LoginScreen1> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.orange.shade900,
+                            fontWeight: FontWeight.w400,
+                          color: Colors.white,
                           ),
                         ),
                       ),

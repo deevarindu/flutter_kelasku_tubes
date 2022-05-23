@@ -14,7 +14,10 @@ class ClassesDropdown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButton<String>(
+    return DropdownButtonFormField<String>(
+      validator: (value) => value == "Pilih Kelas"
+          ? "Please choose class"
+          : null,
       isExpanded: true,
       value: selectedDropdown,
       items: listItem.map((String value) {
