@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/widgets.dart';
+
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({
     Key? key,
@@ -19,11 +21,11 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.more_vert),
+            Container(
+              margin: EdgeInsets.only(right: 56),
+              child: title(),
             ),
           ],
         ),

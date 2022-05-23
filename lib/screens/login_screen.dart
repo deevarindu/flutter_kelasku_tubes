@@ -32,8 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+                padding: const EdgeInsets.all(30),
                 height: MediaQuery.of(context).size.height,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 230, 81, 0),
+                            color: Color.fromARGB(255, 255, 169, 32),
                           ),
                         ),
                         GestureDetector(
@@ -113,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                                 suffixIcon: Icon(
                                   Icons.visibility,
-                                  color: Color.fromARGB(255, 230, 81, 0),
+                                  color: Color.fromARGB(255, 255, 169, 32),
                                 )),
                             obscureText: _visible,
                             onTap: _hidePassword,
@@ -143,10 +142,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         }
                       },
                       child: Container(
+                        height: 45,
                         width: double.infinity,
                         padding: const EdgeInsets.symmetric(vertical: 10),
                         decoration: BoxDecoration(
-                          color: Colors.orange.shade900,
+                          color: Color.fromARGB(255, 255, 169, 32),
                           borderRadius: const BorderRadius.all(
                             Radius.circular(10),
                           ),

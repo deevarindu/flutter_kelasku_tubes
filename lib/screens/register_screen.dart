@@ -51,8 +51,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           child: Column(
             children: [
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+                padding: const EdgeInsets.all(30),
                 height: MediaQuery.of(context).size.height,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -82,7 +81,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
-                            color: Color.fromARGB(255, 230, 81, 0),
+                            color: Color.fromARGB(255, 255, 169, 32),
                           ),
                         ),
                       ],
@@ -169,7 +168,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 ),
                                 suffixIcon: const Icon(
                                   Icons.visibility,
-                                  color: Color.fromARGB(255, 230, 81, 0),
+                                  color: Color.fromARGB(255, 255, 169, 32),
                                 )),
                             obscureText: _visible,
                             onTap: _hidePassword,
@@ -199,10 +198,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         }
                       },
                       child: Container(
+                        height: 45,
                         width: double.infinity,
                         padding: const EdgeInsets.symmetric(vertical: 10),
                         decoration: BoxDecoration(
-                          color: Colors.orange.shade900,
+                          color: Color.fromARGB(255, 255, 169, 32),
                           borderRadius: const BorderRadius.all(
                             Radius.circular(10),
                           ),
