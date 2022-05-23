@@ -94,12 +94,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         children: [
                           TextFormField(
                           controller: _nameController,
-                          decoration: const InputDecoration(
+                          decoration: InputDecoration(
                             labelText: 'Name',
                             labelStyle: TextStyle(
                               fontSize: 14,
                               color: Colors.grey,
                             ),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              )
                           ),
                           validator: (value){
                               if(value!.isEmpty)
@@ -110,20 +113,36 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             },
                         ),
                         const SizedBox(height: 20),
-                        ClassesDropdown(
-                          selectedDropdown: selectedDropdown,
-                          listItem: classes,
-                          onDropdownChanged: onDropdownChanged,
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                              color: Colors.grey,
+                              width: 1,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ClassesDropdown(
+                              selectedDropdown: selectedDropdown,
+                              listItem: classes,
+                              onDropdownChanged: onDropdownChanged,
+                            ),
+                          ),
                         ),
+                        const SizedBox(height: 20),
                           TextFormField(
                             keyboardType: TextInputType.emailAddress,
                             controller: _emailController,
-                            decoration: const InputDecoration(
+                            decoration: InputDecoration(
                               labelText: 'Email',
                               labelStyle: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 14,
                               ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              )
                             ),
                             validator: (value){
                                 if(value!.isEmpty){
@@ -141,11 +160,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           const SizedBox(height: 20),
                           TextFormField(
                             controller: _passwordController,
-                            decoration: const InputDecoration(
+                            decoration: InputDecoration(
                               labelText: 'Password',
                               labelStyle: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 14,
+                              ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
                               ),
                               suffixIcon: const Icon(
                                 Icons.visibility,
@@ -196,7 +218,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 16,
-                          color: Colors.orange.shade700,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.orange.shade900,
                         ),
                       ),
                     ),

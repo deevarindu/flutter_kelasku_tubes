@@ -75,16 +75,15 @@ class _LoginScreen1State extends State<LoginScreen1> {
                           TextFormField(
                             keyboardType: TextInputType.emailAddress,
                             controller: _emailController,
-                            decoration: const InputDecoration(
-                              hintText: 'Email',
-                              hintStyle: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 14,
-                              ),
-                              prefixIcon: Icon(
-                                Icons.email,
-                                color: Colors.grey,
-                              ),
+                            decoration: InputDecoration(
+                              labelText: "Email",
+                              labelStyle: TextStyle(
+                              fontSize: 14,
+                              color: Colors.grey,
+                            ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              )
                             ),
                             validator: (value){
                               if(value!.isEmpty){
@@ -102,15 +101,14 @@ class _LoginScreen1State extends State<LoginScreen1> {
                           const SizedBox(height: 20),
                           TextFormField(
                             controller: _passwordController,
-                            decoration: const InputDecoration(
-                              hintText: 'Password',
-                              hintStyle: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 14,
-                              ),
-                              prefixIcon: Icon(
-                                Icons.lock,
-                                color: Colors.grey,
+                            decoration: InputDecoration(
+                              labelText: "Password",
+                              labelStyle: TextStyle(
+                              fontSize: 14,
+                              color: Colors.grey,
+                            ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
                               ),
                               suffixIcon: Icon(
                                 Icons.visibility,

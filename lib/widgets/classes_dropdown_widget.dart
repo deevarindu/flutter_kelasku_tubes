@@ -16,7 +16,6 @@ class ClassesDropdown extends StatelessWidget {
   Widget build(BuildContext context) {
     return DropdownButton<String>(
       isExpanded: true,
-      
       value: selectedDropdown,
       items: listItem.map((String value) {
         return DropdownMenuItem<String>(
@@ -32,7 +31,6 @@ class ClassesDropdown extends StatelessWidget {
       onChanged: (value) {
         onDropdownChanged(value);
       },
-      
     );
     
   }
