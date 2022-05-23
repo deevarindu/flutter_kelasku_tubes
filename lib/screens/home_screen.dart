@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kelasku_tubes/screens/screens.dart';
 import 'package:flutter_kelasku_tubes/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -22,7 +23,12 @@ class HomeScreen extends StatelessWidget {
             ),
             title(),
             PopupMenuButton<String>(
-              onSelected: (String value) {},
+              onSelected: (String value) {
+                if (value == 'Logout') {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()));
+                }
+              },
               itemBuilder: (BuildContext context) {
                 return {'Logout'}.map((String choice) {
                   return PopupMenuItem<String>(

@@ -20,9 +20,13 @@ class App extends StatelessWidget {
           foregroundColor: Colors.black,
         ),
       ),
-      home: Scaffold(
-        body: HomeScreen(),
-      ),
+      initialRoute: '/home',
+      routes: {
+        '/login': (context) => LoginScreen(),
+        '/register': (context) => RegisterScreen(),
+        '/home': (context) => HomeScreen(),
+        '/profile': (context) => ProfileScreen(),
+      },
     );
   }
 }
