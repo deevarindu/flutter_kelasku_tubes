@@ -48,6 +48,23 @@ class _LoginScreen1State extends State<LoginScreen1> {
                             fontWeight: FontWeight.w500,
                             color: Color.fromARGB(255, 230, 81, 0),
                           ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const RegisterScreen(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'Register',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: Color.fromARGB(255, 230, 81, 0),
+                          ),
                         ),
                         GestureDetector(
                           onTap: () {

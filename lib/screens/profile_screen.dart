@@ -28,6 +28,36 @@ class ProfileScreen extends StatelessWidget {
           ],
         ),
       ),
+      body: SingleChildScrollView(
+        child: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.white,
+            boxShadow: const [
+              BoxShadow(
+                color: Color.fromARGB(26, 77, 77, 77),
+                blurRadius: 5,
+                spreadRadius: 1,
+              ),
+            ],
+          ),
+          child: Column(
+            children: [
+              Image.asset('assets/images/user.png', width: 100, height: 100),
+              const SizedBox(height: 8),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'Ubah Foto Profil',
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
