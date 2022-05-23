@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kelasku_tubes/screens/home_screen.dart';
-import 'package:flutter_kelasku_tubes/screens/register_screen.dart';
+import 'package:flutter_kelasku_tubes/screens/screens.dart';
 
-class LoginScreen1 extends StatefulWidget {
-  const LoginScreen1({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen1> createState() => _LoginScreen1State();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreen1State extends State<LoginScreen1> {
+class _LoginScreenState extends State<LoginScreen> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -33,7 +32,8 @@ class _LoginScreen1State extends State<LoginScreen1> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
                 height: MediaQuery.of(context).size.height,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -43,23 +43,6 @@ class _LoginScreen1State extends State<LoginScreen1> {
                       children: [
                         const Text(
                           'Login',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 230, 81, 0),
-                          ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const RegisterScreen(),
-                            ),
-                          );
-                        },
-                        child: const Text(
-                          'Register',
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
@@ -93,53 +76,51 @@ class _LoginScreen1State extends State<LoginScreen1> {
                             keyboardType: TextInputType.emailAddress,
                             controller: _emailController,
                             decoration: InputDecoration(
-                              labelText: "Email",
-                              labelStyle: TextStyle(
-                              fontSize: 14,
-                              color: Colors.grey,
-                            ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              )
-                            ),
-                            validator: (value){
-                              if(value!.isEmpty){
+                                labelText: "Email",
+                                labelStyle: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                )),
+                            validator: (value) {
+                              if (value!.isEmpty) {
                                 return 'Please enter email';
                               }
-                              if(!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)){
+                              if (!RegExp(
+                                      "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
+                                  .hasMatch(value)) {
                                 return 'Please enter email valid';
                               }
-                                return null;
+                              return null;
                             },
-                            onSaved: (value){
+                            onSaved: (value) {
                               email = value!;
-                      },
+                            },
                           ),
                           const SizedBox(height: 20),
                           TextFormField(
                             controller: _passwordController,
                             decoration: InputDecoration(
-                              labelText: "Password",
-                              labelStyle: TextStyle(
-                              fontSize: 14,
-                              color: Colors.grey,
-                            ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              suffixIcon: Icon(
-                                Icons.visibility,
-                                color: Color.fromARGB(255, 230, 81, 0),)
-                            ),
+                                labelText: "Password",
+                                labelStyle: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                suffixIcon: Icon(
+                                  Icons.visibility,
+                                  color: Color.fromARGB(255, 230, 81, 0),
+                                )),
                             obscureText: _visible,
                             onTap: _hidePassword,
-                            validator: (value){
-                              if(value!.isEmpty)
-                              {
+                            validator: (value) {
+                              if (value!.isEmpty) {
                                 return 'Please enter password';
-                              }
-                              else if (value.length > 7 || value.length < 5)
-                              {
+                              } else if (value.length > 7 || value.length < 5) {
                                 return 'Password must be 6 character';
                               }
                               return null;
@@ -151,7 +132,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
                     ),
                     TextButton(
                       onPressed: () {
-                        if(formKey.currentState!.validate()){
+                        if (formKey.currentState!.validate()) {
                           formKey.currentState!.save();
                           Navigator.pushReplacement(
                             context,
@@ -160,7 +141,6 @@ class _LoginScreen1State extends State<LoginScreen1> {
                             ),
                           );
                         }
-                      
                       },
                       child: Container(
                         width: double.infinity,
@@ -177,7 +157,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
-                          color: Colors.white,
+                            color: Colors.white,
                           ),
                         ),
                       ),
