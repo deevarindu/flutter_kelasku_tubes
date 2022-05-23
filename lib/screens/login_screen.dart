@@ -9,25 +9,16 @@ class LoginScreen1 extends StatefulWidget {
 }
 
 class _LoginScreen1State extends State<LoginScreen1> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
-class LoginScreen extends StatelessWidget {
-  LoginScreen({Key? key}) : super(key: key);
-
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
-  bool viewVisible = true;
+  bool _visible = true;
 
-  /*void hideWidget() {
+  void _hidePassword() {
     setState(() {
-      viewVisible = !viewVisible;
+      _visible = !_visible;
     });
-  }*/
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +40,7 @@ class LoginScreen extends StatelessWidget {
                         'Login',
                         style: TextStyle(
                           fontSize: 16,
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w500,
                           color: Color.fromARGB(255, 230, 81, 0),
                         ),
                       ),
@@ -93,7 +84,6 @@ class LoginScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 20),
                         TextFormField(
-                          obscureText: viewVisible,
                           controller: _passwordController,
                           decoration: const InputDecoration(
                             hintText: 'Password',
@@ -105,16 +95,12 @@ class LoginScreen extends StatelessWidget {
                               Icons.lock,
                               color: Colors.grey,
                             ),
-                            // suffixIcon: IconButton(
-                            //   icon: Icon(
-                            //     viewVisible
-                            //         ? Icons.visibility
-                            //         : Icons.visibility_off,
-                            //     color: Colors.grey,
-                            //   ),
-                            //   onPressed: _hideWidget,
-                            // ),
+                            suffixIcon: const Icon(
+                              Icons.visibility,
+                              color: Color.fromARGB(255, 230, 81, 0),)
                           ),
+                          obscureText: _visible,
+                          onTap: _hidePassword,
                         ),
                         const SizedBox(height: 20),
                       ],
