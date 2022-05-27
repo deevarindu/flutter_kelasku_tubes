@@ -29,9 +29,6 @@ class App extends StatelessWidget {
         '/profile': (context) => const ProfileScreen(),
         '/kalkulatorSuhu': (context) => const KalkulatorSuhuScreen(),
       },
-      home: const Scaffold(
-        body: LoginScreen(),
-      ),
     );
   }
 }
