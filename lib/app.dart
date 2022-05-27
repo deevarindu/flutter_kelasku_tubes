@@ -30,9 +30,6 @@ class App extends StatelessWidget {
         '/kalkulatorSuhu': (context) => const KalkulatorSuhuScreen(),
         '/mapelDetail': (context) => const MapelDetailScreen(),
       },
-      home: const Scaffold(
-        body: LoginScreen(),
-      ),
     );
   }
 }
