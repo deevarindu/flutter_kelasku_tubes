@@ -21,7 +21,6 @@ class App extends StatelessWidget {
           foregroundColor: Colors.black,
         ),
       ),
-//<<<<<<< master
       initialRoute: '/home',
       routes: {
         '/login': (context) => const LoginScreen(),
@@ -30,7 +29,6 @@ class App extends StatelessWidget {
         '/profile': (context) => const ProfileScreen(),
         '/kalkulatorSuhu': (context) => const KalkulatorSuhuScreen(),
       },
-
       home: const Scaffold(
         body: LoginScreen(),
       ),
