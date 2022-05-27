@@ -136,12 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-//<<<<<<< master
                                 builder: (context) => HomeScreen()),
-//=======
-                              builder: (context) => const HomeScreen(),
-                            ),
-//>>>>>>> master
                           );
                         }
                       },
