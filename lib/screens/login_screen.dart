@@ -136,12 +136,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-//<<<<<<< master
                                 builder: (context) => HomeScreen()),
-//=======
-                              builder: (context) => const HomeScreen(),
-                            ),
-//>>>>>>> master
+                            //builder: (context) =>  HomeScreen(),
                           );
                         }
                       },
@@ -149,9 +145,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 45,
                         width: double.infinity,
                         padding: const EdgeInsets.symmetric(vertical: 10),
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Color.fromARGB(255, 255, 169, 32),
-                          borderRadius: const BorderRadius.all(
+                          borderRadius: BorderRadius.all(
                             Radius.circular(10),
                           ),
                         ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kelasku_tubes/screens/profile_screen.dart';
+
 import 'package:flutter_kelasku_tubes/screens/screens.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -23,10 +23,10 @@ class App extends StatelessWidget {
 //<<<<<<< master
       initialRoute: '/home',
       routes: {
-        '/login': (context) => LoginScreen(),
-        '/register': (context) => RegisterScreen(),
+        '/login': (context) => const LoginScreen(),
+        '/register': (context) => const RegisterScreen(),
         '/home': (context) => HomeScreen(),
-        '/profile': (context) => ProfileScreen(),
+        '/profile': (context) => const ProfileScreen(),
       },
 //=======
       home: const Scaffold(

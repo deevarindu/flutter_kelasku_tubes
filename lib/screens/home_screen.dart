@@ -25,8 +25,10 @@ class HomeScreen extends StatelessWidget {
             PopupMenuButton<String>(
               onSelected: (String value) {
                 if (value == 'Logout') {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => LoginScreen()));
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginScreen()));
                 }
               },
               itemBuilder: (BuildContext context) {
@@ -35,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                     value: choice,
                     child: Text(
                       choice,
-                      style: TextStyle(fontSize: 14),
+                      style: const TextStyle(fontSize: 14),
                     ),
                   );
                 }).toList();
@@ -51,7 +53,7 @@ class HomeScreen extends StatelessWidget {
             ProfileCard(
                 nama: nama, kelas: kelas, email: email, password: password),
             Container(
-              margin: EdgeInsets.only(bottom: 15, left: 30),
+              margin: const EdgeInsets.only(bottom: 15, left: 30),
               child: const Text(
                 'Pelajaranku',
                 style: TextStyle(

@@ -192,7 +192,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const HomeScreen(),
+                              builder: (context) => HomeScreen(),
                             ),
                           );
                         }
@@ -201,7 +201,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         height: 45,
                         width: double.infinity,
                         padding: const EdgeInsets.symmetric(vertical: 10),
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Color.fromARGB(255, 255, 169, 32),
                           borderRadius: const BorderRadius.all(
                             Radius.circular(10),
