@@ -10,12 +10,12 @@ class inputSuhu extends StatelessWidget {
       controller: inputCelcius,
       decoration: InputDecoration(
         labelText: 'Celcius',
-        labelStyle: TextStyle(
+        labelStyle: const TextStyle(
           color: Colors.grey,
           fontSize: 14,
         ),
         hintText: 'Masukkan Suhu dalam Celcius',
-        hintStyle: TextStyle(
+        hintStyle: const TextStyle(
           color: Colors.grey,
           fontSize: 14,
         ),

@@ -36,7 +36,7 @@ class _KalkulatorSuhuScreenState extends State<KalkulatorSuhuScreen> {
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.all(20),
+              margin: const EdgeInsets.all(20),
               height: MediaQuery.of(context).size.height,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -50,7 +50,7 @@ class _KalkulatorSuhuScreenState extends State<KalkulatorSuhuScreen> {
                       Flexible(
                         flex: 2,
                         child: Container(
-                          margin: EdgeInsets.only(left: 16),
+                          margin: const EdgeInsets.only(left: 16),
                           //child: ,
                         ),
                       ),
