@@ -12,7 +12,7 @@ class PerhitunganTerakhir extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       "$hasilKonversi",
-      style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+      style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
     );
   }
 }
