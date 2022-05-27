@@ -20,6 +20,7 @@ class App extends StatelessWidget {
           foregroundColor: Colors.black,
         ),
       ),
+//<<<<<<< master
       initialRoute: '/home',
       routes: {
         '/login': (context) => LoginScreen(),
@@ -27,6 +28,11 @@ class App extends StatelessWidget {
         '/home': (context) => HomeScreen(),
         '/profile': (context) => ProfileScreen(),
       },
+//=======
+      home: const Scaffold(
+        body: ProfileScreen(),
+      ),
+//>>>>>>> master
     );
   }
 }

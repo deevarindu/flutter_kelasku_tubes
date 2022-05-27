@@ -64,7 +64,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => LoginScreen(),
+                                builder: (context) => const LoginScreen(),
                               ),
                             );
                           },
@@ -94,7 +94,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             controller: _nameController,
                             decoration: InputDecoration(
                                 labelText: 'Name',
-                                labelStyle: TextStyle(
+                                labelStyle: const TextStyle(
                                   fontSize: 14,
                                   color: Colors.grey,
                                 ),
@@ -132,7 +132,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             controller: _emailController,
                             decoration: InputDecoration(
                                 labelText: 'Email',
-                                labelStyle: TextStyle(
+                                labelStyle: const TextStyle(
                                   color: Colors.grey,
                                   fontSize: 14,
                                 ),
@@ -159,7 +159,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             controller: _passwordController,
                             decoration: InputDecoration(
                                 labelText: 'Password',
-                                labelStyle: TextStyle(
+                                labelStyle: const TextStyle(
                                   color: Colors.grey,
                                   fontSize: 14,
                                 ),
@@ -192,7 +192,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => HomeScreen(),
+                              builder: (context) => const HomeScreen(),
                             ),
                           );
                         }
@@ -207,7 +207,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             Radius.circular(10),
                           ),
                         ),
-                        child: Text(
+                        child: const Text(
                           'Register',
                           textAlign: TextAlign.center,
                           style: TextStyle(

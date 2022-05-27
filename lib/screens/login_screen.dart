@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => RegisterScreen(),
+                                builder: (context) => const RegisterScreen(),
                               ),
                             );
                           },
@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             controller: _emailController,
                             decoration: InputDecoration(
                                 labelText: "Email",
-                                labelStyle: TextStyle(
+                                labelStyle: const TextStyle(
                                   fontSize: 14,
                                   color: Colors.grey,
                                 ),
@@ -103,14 +103,14 @@ class _LoginScreenState extends State<LoginScreen> {
                             controller: _passwordController,
                             decoration: InputDecoration(
                                 labelText: "Password",
-                                labelStyle: TextStyle(
+                                labelStyle: const TextStyle(
                                   fontSize: 14,
                                   color: Colors.grey,
                                 ),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                suffixIcon: Icon(
+                                suffixIcon: const Icon(
                                   Icons.visibility,
                                   color: Color.fromARGB(255, 255, 169, 32),
                                 )),
@@ -136,7 +136,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
+//<<<<<<< master
                                 builder: (context) => HomeScreen()),
+//=======
+                              builder: (context) => const HomeScreen(),
+                            ),
+//>>>>>>> master
                           );
                         }
                       },
@@ -150,7 +155,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             Radius.circular(10),
                           ),
                         ),
-                        child: Text(
+                        child: const Text(
                           'Login',
                           textAlign: TextAlign.center,
                           style: TextStyle(
