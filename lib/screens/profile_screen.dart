@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_kelasku_tubes/screens/screens.dart';
 import '../widgets/widgets.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -24,7 +24,7 @@ class ProfileScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              margin: EdgeInsets.only(right: 56),
+              margin: const EdgeInsets.only(right: 56),
               child: title(),
             ),
           ],
@@ -81,7 +81,84 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ],
                     ),
+                    const Icon(Icons.arrow_forward_ios_rounded,
+                        color: Colors.grey, size: 16),
                   ],
+                ),
+              ),
+              const SizedBox(height: 16),
+              GestureDetector(
+                onTap: () {},
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Kelas',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          kelas!,
+                          style: const TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Icon(Icons.arrow_forward_ios_rounded,
+                        color: Colors.grey, size: 16),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 16),
+              GestureDetector(
+                onTap: () {},
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Password',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          password!,
+                          style: const TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Icon(Icons.arrow_forward_ios_rounded,
+                        color: Colors.grey, size: 16),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 16),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreen(),
+                    ),
+                  );
+                },
+                child: const Text(
+                  'Log Out',
+                  style: TextStyle(color: Colors.red),
                 ),
               ),
             ],
