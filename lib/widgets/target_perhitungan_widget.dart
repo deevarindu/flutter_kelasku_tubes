@@ -24,7 +24,7 @@ class TargetPerhitungan extends StatelessWidget {
           value: value,
           child: Text(
             value,
-            style: TextStyle(fontSize: 14),
+            style: const TextStyle(fontSize: 14),
           ),
         );
       }).toList(),

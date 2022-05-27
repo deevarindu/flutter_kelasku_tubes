@@ -26,6 +26,23 @@ class _KalkulatorSuhuScreenState extends State<KalkulatorSuhuScreen> {
     });
   }
 
+  void konversi() {
+    return setState(() {
+      if (inputCelcius.text.isEmpty) {
+        hasilKonversi = 0;
+      } else {
+        hasilKonversi = double.parse(inputCelcius.text);
+        if (selectedDropdown == "Kelvin") {
+          hasilKonversi = hasilKonversi + 273.15;
+        } else if (selectedDropdown == "Reamur") {
+          hasilKonversi = hasilKonversi * 4 / 5;
+        } else if (selectedDropdown == "Fahrenheit") {
+          hasilKonversi = hasilKonversi * 9 / 5 + 32;
+        }
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,11 +68,27 @@ class _KalkulatorSuhuScreenState extends State<KalkulatorSuhuScreen> {
                         flex: 2,
                         child: Container(
                           margin: const EdgeInsets.only(left: 16),
-                          //child: ,
+                          child: TargetPerhitungan(
+                            selectedDropdown: selectedDropdown,
+                            listItem: listItem,
+                            onDropdownChanged: onDropdownChanged,
+                            konversi: konversi,
+                          ),
                         ),
                       ),
                     ],
-                  )
+                  ),
+                  Column(
+                    children: [
+                      const Text(
+                        "Hasil",
+                        style: TextStyle(fontSize: 18),
+                      ),
+                      const SizedBox(height: 5),
+                      PerhitunganTerakhir(hasilKonversi: hasilKonversi),
+                    ],
+                  ),
+                  KonversiSuhu(konversi: konversi),
                 ],
               ),
             ),
