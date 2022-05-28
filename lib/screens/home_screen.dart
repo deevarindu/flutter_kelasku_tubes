@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kelasku_tubes/screens/kalender.dart';
+import 'package:flutter_kelasku_tubes/screens/kalkulator_suhu_screen.dart';
 import 'package:flutter_kelasku_tubes/screens/screens.dart';
 import 'package:flutter_kelasku_tubes/widgets/widgets.dart';
 
@@ -10,17 +12,55 @@ class HomeScreen extends StatelessWidget {
   String email = 'Email@gmail.com';
   String password = '121212';
 
+   var scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            ListTile(
+              leading: Icon(Icons.note),
+              title: Text('Catatan'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.calendar_month),
+              title: Text('Kalender'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                  builder: (context) => KalenderApp(),
+          ),
+        );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.calculate),
+              title: Text('Kalkulator Suhu'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                  builder: (context) => KalkulatorSuhuScreen(),
+          ),
+        );
+              },
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.menu),
-            ),
+            SizedBox(width: MediaQuery.of(context).size.width * 0.04),
             title(),
             PopupMenuButton<String>(
               onSelected: (String value) {

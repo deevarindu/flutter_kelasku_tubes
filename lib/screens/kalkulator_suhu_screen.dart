@@ -48,6 +48,7 @@ class _KalkulatorSuhuScreenState extends State<KalkulatorSuhuScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Konverter Suhu'),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(
