@@ -8,11 +8,11 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
   String nama = 'Deeva Rindu Wijarista P';
-  String kelas = '7A';
+  String kelas = '7';
   String email = 'Email@gmail.com';
   String password = '121212';
 
-   var scaffoldKey = GlobalKey<ScaffoldState>();
+  var scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +36,9 @@ class HomeScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                  builder: (context) => KalenderApp(),
-          ),
-        );
+                    builder: (context) => KalenderApp(),
+                  ),
+                );
               },
             ),
             ListTile(
@@ -48,9 +48,9 @@ class HomeScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                  builder: (context) => KalkulatorSuhuScreen(),
-          ),
-        );
+                    builder: (context) => KalkulatorSuhuScreen(),
+                  ),
+                );
               },
             ),
           ],
