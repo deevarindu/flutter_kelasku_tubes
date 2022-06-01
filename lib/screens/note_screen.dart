@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_kelasku_tubes/screens/screens.dart';
+import 'package:flutter_kelasku_tubes/model/models.dart';
+import 'package:flutter_kelasku_tubes/widgets/widgets.dart';
 
 class NoteScreen extends StatelessWidget {
   const NoteScreen({Key? key}) : super(key: key);
