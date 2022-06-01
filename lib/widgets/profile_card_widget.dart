@@ -78,9 +78,9 @@ class ProfileCard extends StatelessWidget {
                       height: 5,
                     ),
                     Text(
-                      kelas,
+                      'Kelas ' + kelas,
                       style: const TextStyle(
-                        fontSize: 10,
+                        fontSize: 12,
                         color: Colors.grey,
                       ),
                     ),
