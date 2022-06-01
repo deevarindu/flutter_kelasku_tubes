@@ -23,15 +23,15 @@ class HomeScreen extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             ListTile(
-              leading: Icon(Icons.note),
-              title: Text('Catatan'),
+              leading: const Icon(Icons.note),
+              title: const Text('Catatan'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              leading: Icon(Icons.calendar_month),
-              title: Text('Kalender'),
+              leading: const Icon(Icons.calendar_month),
+              title: const Text('Kalender'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -42,13 +42,13 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: Icon(Icons.calculate),
-              title: Text('Kalkulator Suhu'),
+              leading: const Icon(Icons.calculate),
+              title: const Text('Kalkulator Suhu'),
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => KalkulatorSuhuScreen(),
+                    builder: (context) => const KalkulatorSuhuScreen(),
                   ),
                 );
               },

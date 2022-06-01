@@ -81,7 +81,7 @@ class _KalenderAppState extends State<KalenderApp> {
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.circular(5.0),
               ),
-              selectedTextStyle: TextStyle(color: Colors.white),
+              selectedTextStyle: const TextStyle(color: Colors.white),
               todayDecoration: BoxDecoration(
                 color: Colors.grey.shade800,
                 shape: BoxShape.rectangle,
@@ -96,7 +96,7 @@ class _KalenderAppState extends State<KalenderApp> {
                 borderRadius: BorderRadius.circular(5.0),
               ),
             ),
-            headerStyle: HeaderStyle(
+            headerStyle: const HeaderStyle(
               formatButtonVisible: false,
               titleCentered: true,
               formatButtonShowsNext: false,
@@ -116,20 +116,19 @@ class _KalenderAppState extends State<KalenderApp> {
         onPressed: () => showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text("Add Event"),
+            title: const Text("Add Event"),
             content: TextFormField(
               controller: _eventController,
             ),
             actions: [
               TextButton(
-                child: Text("Cancel"),
+                child: const Text("Cancel"),
                 onPressed: () => Navigator.pop(context),
               ),
               TextButton(
-                child: Text("Ok"),
+                child: const Text("Ok"),
                 onPressed: () {
                   if (_eventController.text.isEmpty) {
-
                   } else {
                     if (selectedEvents[selectedDay] != null) {
                       selectedEvents[selectedDay]?.add(
@@ -140,19 +139,18 @@ class _KalenderAppState extends State<KalenderApp> {
                         Event(title: _eventController.text)
                       ];
                     }
-
                   }
                   Navigator.pop(context);
                   _eventController.clear();
-                  setState((){});
+                  setState(() {});
                   return;
                 },
               ),
             ],
           ),
         ),
-        label: Text("Add Event"),
-        icon: Icon(Icons.add),
+        label: const Text("Add Event"),
+        icon: const Icon(Icons.add),
       ),
     );
   }
