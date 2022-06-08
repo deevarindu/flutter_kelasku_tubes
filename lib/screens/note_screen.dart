@@ -12,7 +12,7 @@ class NoteScreen extends StatelessWidget {
     return Provider<NotesOperation>(
       create: (BuildContext context) => NotesOperation(),
       child: Scaffold(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.orange,
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Navigator.push(
@@ -22,7 +22,7 @@ class NoteScreen extends StatelessWidget {
               ),
             );
           },
-          child: const Icon(Icons.add, size: 30, color: Colors.blueGrey),
+          child: const Icon(Icons.add, size: 30, color: Colors.orange),
           backgroundColor: Colors.white,
         ),
         appBar: AppBar(

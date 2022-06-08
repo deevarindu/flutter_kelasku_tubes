@@ -13,7 +13,7 @@ class AddScreen extends StatelessWidget {
     return Provider<NotesOperation>(
       create: (BuildContext context) => NotesOperation(),
       child: Scaffold(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.orange,
         appBar: AppBar(
           title: const Text('KelasKu'),
           centerTitle: true,
@@ -39,13 +39,13 @@ class AddScreen extends StatelessWidget {
                     hintStyle: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                   onChanged: (value) {
                     judulTeks = value;
@@ -55,7 +55,7 @@ class AddScreen extends StatelessWidget {
                   child: TextField(
                     decoration: const InputDecoration(
                       border: InputBorder.none,
-                      hintText: 'Enter Description',
+                      hintText: 'Masukkan Deskripsi',
                       hintStyle: TextStyle(
                         fontSize: 18,
                         color: Colors.white,
