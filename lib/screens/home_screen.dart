@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kelasku_tubes/screens/kalender.dart';
 import 'package:flutter_kelasku_tubes/screens/kalkulator_suhu_screen.dart';
+import 'package:flutter_kelasku_tubes/screens/note_screen.dart';
 import 'package:flutter_kelasku_tubes/screens/screens.dart';
 import 'package:flutter_kelasku_tubes/widgets/widgets.dart';
 
@@ -26,7 +27,12 @@ class HomeScreen extends StatelessWidget {
               leading: const Icon(Icons.note),
               title: const Text('Catatan'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NoteScreen(),
+                  ),
+                );
               },
             ),
             ListTile(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kelasku_tubes/screens/kalkulator_suhu_screen.dart';
+import 'package:flutter_kelasku_tubes/screens/note_screen.dart';
 
 import 'package:flutter_kelasku_tubes/screens/screens.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -29,6 +30,7 @@ class App extends StatelessWidget {
         '/profile': (context) => const ProfileScreen(),
         '/kalkulatorSuhu': (context) => const KalkulatorSuhuScreen(),
         '/mapelDetail': (context) => const MapelDetailScreen(),
+        '/catatan': (context) => const NoteScreen(),
       },
     );
   }
