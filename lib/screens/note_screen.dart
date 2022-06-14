@@ -39,8 +39,6 @@ class NoteScreen extends StatelessWidget {
             backgroundColor: Colors.transparent,
           ),
           body: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height * 0.4,
             child: Consumer<NotesOperation>(
               builder: (context, NotesOperation data, child) {
                 return ListView.builder(

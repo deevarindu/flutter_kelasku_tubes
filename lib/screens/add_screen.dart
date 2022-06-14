@@ -22,8 +22,6 @@ class AddScreen extends StatelessWidget {
             backgroundColor: Colors.transparent,
           ),
           body: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height * 0.4,
             child: Padding(
               padding: const EdgeInsets.only(
                 top: 15,
@@ -59,12 +57,12 @@ class AddScreen extends StatelessWidget {
                         hintText: 'Masukkan Deskripsi',
                         hintStyle: TextStyle(
                           fontSize: 18,
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
                       ),
                       style: const TextStyle(
                         fontSize: 18,
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
                       onChanged: (value) {
                         deskripsiTeks = value;
@@ -87,7 +85,7 @@ class AddScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Colors.blueGrey,
+                        color: Colors.black12,
                       ),
                     ),
                   )
