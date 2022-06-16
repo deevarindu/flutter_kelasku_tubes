@@ -38,17 +38,15 @@ class NoteScreen extends StatelessWidget {
             elevation: 0,
             backgroundColor: Colors.transparent,
           ),
-          body: Container(
-            child: Consumer<NotesOperation>(
-              builder: (context, NotesOperation data, child) {
-                return ListView.builder(
-                  itemCount: data.getNotes.length,
-                  itemBuilder: (context, index) {
-                    return NotesCard(data.getNotes[index]);
-                  },
-                );
-              },
-            ),
+          body: Consumer<NotesOperation>(
+            builder: (context, NotesOperation data, child) {
+              return ListView.builder(
+                itemCount: data.getNotes.length,
+                itemBuilder: (context, index) {
+                  return NotesCard(data.getNotes[index]);
+                },
+              );
+            },
           ),
         );
       },
