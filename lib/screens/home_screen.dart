@@ -115,19 +115,76 @@ class HomeScreen extends StatelessWidget {
                     height: 100,
                     child: GridView.count(
                       crossAxisCount: 2,
-                      children: const [
+                      children: [
                         CustomCard(
                             judul: "Matematika",
                             gambar:
                                 'https://cdn.pixabay.com/photo/2018/02/01/14/09/yellow-3123271_960_720.jpg'),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30, right: 20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              TextButton(
+                                child: Text('Lihat Latihan Soal ->'),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const NoteScreen(),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
                         CustomCard(
                             judul: "Bahasa Indonesia",
                             gambar:
                                 'https://cdn.pixabay.com/photo/2018/02/01/14/09/yellow-3123271_960_720.jpg'),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30, right: 20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              TextButton(
+                                child: Text('Lihat Latihan Soal ->'),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const NoteScreen(),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
                         CustomCard(
                             judul: "Bahasa Inggris",
                             gambar:
                                 'https://cdn.pixabay.com/photo/2018/02/01/14/09/yellow-3123271_960_720.jpg'),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30, right: 20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              TextButton(
+                                child: Text('Lihat Latihan Soal ->'),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const NoteScreen(),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),

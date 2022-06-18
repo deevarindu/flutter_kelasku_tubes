@@ -31,18 +31,6 @@ class CustomCard extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: Text(judul!),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 30, right: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Text('Lihat Latihan Soal ->'),
-                  ),
-                ],
-              ),
-            ),
           ],
         ),
       ),
