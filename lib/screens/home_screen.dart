@@ -116,7 +116,7 @@ class HomeScreen extends StatelessWidget {
                     child: GridView.count(
                       crossAxisCount: 2,
                       children: [
-                        CustomCard(
+                        const CustomCard(
                             judul: "Matematika",
                             gambar:
                                 'https://cdn.pixabay.com/photo/2018/02/01/14/09/yellow-3123271_960_720.jpg'),
@@ -126,12 +126,12 @@ class HomeScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               TextButton(
-                                child: Text('Lihat Latihan Soal ->'),
+                                child: const Text('Lihat Latihan Soal ->'),
                                 onPressed: () {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => const NoteScreen(),
+                                      builder: (context) => const Matematika(),
                                     ),
                                   );
                                 },
@@ -139,7 +139,7 @@ class HomeScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        CustomCard(
+                        const CustomCard(
                             judul: "Bahasa Indonesia",
                             gambar:
                                 'https://cdn.pixabay.com/photo/2018/02/01/14/09/yellow-3123271_960_720.jpg'),
@@ -149,7 +149,7 @@ class HomeScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               TextButton(
-                                child: Text('Lihat Latihan Soal ->'),
+                                child: const Text('Lihat Latihan Soal ->'),
                                 onPressed: () {
                                   Navigator.push(
                                     context,
@@ -162,7 +162,7 @@ class HomeScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        CustomCard(
+                        const CustomCard(
                             judul: "Bahasa Inggris",
                             gambar:
                                 'https://cdn.pixabay.com/photo/2018/02/01/14/09/yellow-3123271_960_720.jpg'),
@@ -172,7 +172,7 @@ class HomeScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               TextButton(
-                                child: Text('Lihat Latihan Soal ->'),
+                                child: const Text('Lihat Latihan Soal ->'),
                                 onPressed: () {
                                   Navigator.push(
                                     context,
