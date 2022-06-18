@@ -112,7 +112,7 @@ class HomeScreen extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                   child: SizedBox(
-                    height: 250,
+                    height: 100,
                     child: GridView.count(
                       crossAxisCount: 2,
                       children: const [
@@ -122,6 +122,10 @@ class HomeScreen extends StatelessWidget {
                                 'https://cdn.pixabay.com/photo/2018/02/01/14/09/yellow-3123271_960_720.jpg'),
                         CustomCard(
                             judul: "Bahasa Indonesia",
+                            gambar:
+                                'https://cdn.pixabay.com/photo/2018/02/01/14/09/yellow-3123271_960_720.jpg'),
+                        CustomCard(
+                            judul: "Bahasa Inggris",
                             gambar:
                                 'https://cdn.pixabay.com/photo/2018/02/01/14/09/yellow-3123271_960_720.jpg'),
                       ],

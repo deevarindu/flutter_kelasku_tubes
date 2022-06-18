@@ -13,12 +13,12 @@ class CustomCard extends StatelessWidget {
       padding: const EdgeInsets.only(top: 10),
       child: Card(
         //menambahkan bayangan
-        elevation: 5,
+        elevation: 10,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 100,
+              height: 200,
               decoration: BoxDecoration(
                 image: DecorationImage(
                     image: NetworkImage(
@@ -30,7 +30,14 @@ class CustomCard extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10),
               child: Text(judul!),
-            )
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 30, right: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [Text('Lihat Latihan Soal')],
+              ),
+            ),
           ],
         ),
       ),
