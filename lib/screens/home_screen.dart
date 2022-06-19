@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => NoteScreen(),
+                    builder: (context) => const NoteScreen(),
                   ),
                 );
               },
@@ -107,6 +107,89 @@ class HomeScreen extends StatelessWidget {
                   color: Colors.orange,
                 ),
               ),
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: SizedBox(
+                    height: 100,
+                    child: GridView.count(
+                      crossAxisCount: 2,
+                      children: [
+                        const CustomCard(
+                            judul: "Matematika",
+                            gambar:
+                                'https://cdn.pixabay.com/photo/2018/02/01/14/09/yellow-3123271_960_720.jpg'),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30, right: 20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              TextButton(
+                                child: const Text('Lihat Latihan Soal ->'),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const Matematika(),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                        const CustomCard(
+                            judul: "Bahasa Indonesia",
+                            gambar:
+                                'https://cdn.pixabay.com/photo/2018/02/01/14/09/yellow-3123271_960_720.jpg'),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30, right: 20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              TextButton(
+                                child: const Text('Lihat Latihan Soal ->'),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const NoteScreen(),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                        const CustomCard(
+                            judul: "Bahasa Inggris",
+                            gambar:
+                                'https://cdn.pixabay.com/photo/2018/02/01/14/09/yellow-3123271_960_720.jpg'),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30, right: 20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              TextButton(
+                                child: const Text('Lihat Latihan Soal ->'),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const NoteScreen(),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

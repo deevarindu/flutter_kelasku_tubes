@@ -16,16 +16,14 @@ class MapelDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(namaPelajaran!),
       ),
-      body: Container(
-        child: ListView.builder(
-          itemBuilder: ((context, index) {
-            return ListTile(
-              title: Text('Bab ${index + 1}'),
-              subtitle: Text('Sub Bab ${index + 1}'),
-            );
-          }),
-          itemCount: jumlahBab!,
-        ),
+      body: ListView.builder(
+        itemBuilder: ((context, index) {
+          return ListTile(
+            title: Text('Bab ${index + 1}'),
+            subtitle: Text('Sub Bab ${index + 1}'),
+          );
+        }),
+        itemCount: jumlahBab!,
       ),
     );
   }
