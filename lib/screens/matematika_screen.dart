@@ -21,13 +21,14 @@ class Matematika extends StatelessWidget {
           bottom: 80,
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('Matematika'),
+            Card(child: Text('Matematika')),
             SizedBox(
               height: 10,
             ),
-            Image.asset('/assets/images/no1_MatSoal.png'),
+            Image.asset('/assets/images/user.png'),
           ],
         ),
       ),
