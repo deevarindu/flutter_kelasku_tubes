@@ -21,7 +21,7 @@ class KonversiSuhu extends StatelessWidget {
       ),
       child: TextButton(
         style: TextButton.styleFrom(
-          backgroundColor: Colors.orange.shade100,
+          backgroundColor: Color.fromARGB(255, 255, 169, 32),
         ),
         onPressed: () {
           konversi();
@@ -30,7 +30,7 @@ class KonversiSuhu extends StatelessWidget {
           "Konversi Suhu",
           style: TextStyle(
             fontSize: 16,
-            color: Colors.orange.shade700,
+            color: Colors.white,
           ),
         ),
       ),
