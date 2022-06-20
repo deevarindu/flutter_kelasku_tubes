@@ -22,7 +22,7 @@ class App extends StatelessWidget {
           foregroundColor: Colors.black,
         ),
       ),
-      initialRoute: '/home',
+      initialRoute: '/login',
       routes: {
         '/login': (context) => const LoginScreen(),
         '/register': (context) => const RegisterScreen(),

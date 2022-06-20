@@ -55,7 +55,7 @@ class _KalkulatorSuhuScreenState extends State<KalkulatorSuhuScreen> {
           children: [
             Container(
               margin: const EdgeInsets.all(20),
-              height: MediaQuery.of(context).size.height,
+              height: MediaQuery.of(context).size.height - 100,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
