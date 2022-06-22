@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kelasku_tubes/screens/bab_indonesia_screen.dart';
+import 'package:flutter_kelasku_tubes/screens/bab_indonesia_screen7.dart';
 import 'package:flutter_kelasku_tubes/screens/kalkulator_suhu_screen.dart';
 import 'package:flutter_kelasku_tubes/screens/note_screen.dart';
 
