@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_kelasku_tubes/model/models.dart';
 
@@ -13,7 +12,7 @@ class MatematikaBab8 extends StatelessWidget {
         title: const Text('Matematika Kelas 8'),
       ),
       body: ListView.builder(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         itemCount: babList8Mat.length,
         itemBuilder: (context, index) {
           final Bab8Mat bab8 = babList8Mat[index];
@@ -28,8 +27,8 @@ class MatematikaBab8 extends StatelessWidget {
               ),
               title: Text(bab8.judul),
               subtitle: Text(bab8.subJudul),
-              trailing:
-                  IconButton(icon: Icon(Icons.chevron_right), onPressed: () {}),
+              trailing: IconButton(
+                  icon: const Icon(Icons.chevron_right), onPressed: () {}),
             ),
           );
         },

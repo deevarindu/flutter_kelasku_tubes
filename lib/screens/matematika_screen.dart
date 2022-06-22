@@ -24,8 +24,8 @@ class Matematika extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Card(child: Text('Matematika')),
-            SizedBox(
+            const Card(child: Text('Matematika')),
+            const SizedBox(
               height: 10,
             ),
             Image.asset('/assets/images/user.png'),

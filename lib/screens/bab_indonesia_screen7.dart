@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_kelasku_tubes/model/models.dart';
 
@@ -13,7 +12,7 @@ class BahasaIndonesiaBab7 extends StatelessWidget {
         title: const Text('Bahasa Indonesia Kelas 7'),
       ),
       body: ListView.builder(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         itemCount: babList7.length,
         itemBuilder: (context, index) {
           final Bab7 bab7 = babList7[index];
@@ -28,8 +27,8 @@ class BahasaIndonesiaBab7 extends StatelessWidget {
               ),
               title: Text(bab7.judul),
               subtitle: Text(bab7.subJudul),
-              trailing:
-                  IconButton(icon: Icon(Icons.chevron_right), onPressed: () {}),
+              trailing: IconButton(
+                  icon: const Icon(Icons.chevron_right), onPressed: () {}),
             ),
           );
         },

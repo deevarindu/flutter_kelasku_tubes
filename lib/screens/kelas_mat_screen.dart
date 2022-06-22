@@ -11,7 +11,7 @@ class KelasMatematika extends StatelessWidget {
       body: Expanded(
         child: Container(
           child: ListView.builder(
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             itemCount: KelasMatList.length,
             itemBuilder: (context, index) {
               final KelasMat kelasMat = KelasMatList[index];
@@ -27,7 +27,7 @@ class KelasMatematika extends StatelessWidget {
                   );
                 },
                 child: Container(
-                  margin: EdgeInsets.all(10),
+                  margin: const EdgeInsets.all(10),
                   child: Stack(children: <Widget>[
                     Positioned(
                       child: Padding(
@@ -57,13 +57,13 @@ class KelasMatematika extends StatelessWidget {
                         child: Container(
                           width: MediaQuery.of(context).size.width - 60,
                           height: MediaQuery.of(context).size.height * 0.1,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.black38,
                           ),
                           child: Center(
                             child: Text(
                               kelasMat.title,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                                 color: Colors.white,
