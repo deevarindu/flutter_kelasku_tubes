@@ -11,14 +11,14 @@ class KelasMat {
 var KelasMatList = [
   KelasMat(
     title: 'Kelas 7',
-    image: 'assets/images/mapel/matematika.png',
+    image: 'assets/images/mapel/mtk.png',
   ),
   KelasMat(
     title: 'Kelas 8',
-    image: 'assets/images/mapel/matematika.png',
+    image: 'assets/images/mapel/mtk.png',
   ),
   KelasMat(
     title: 'Kelas 9',
-    image: 'assets/images/mapel/matematika.png',
+    image: 'assets/images/mapel/mtk.png',
   ),
 ];

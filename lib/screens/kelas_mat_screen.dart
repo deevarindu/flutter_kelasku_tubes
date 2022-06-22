@@ -5,13 +5,11 @@ import 'package:flutter_kelasku_tubes/screens/screens.dart';
 class KelasMatematika extends StatelessWidget {
   const KelasMatematika({Key? key}) : super(key: key);
 
-//MASIH ERROR YAK GES YAK
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Expanded(
-        child: Container(
+      body: Column(children: [
+        Expanded(
           child: ListView.builder(
             padding: const EdgeInsets.all(8),
             itemCount: KelasMatList.length,
@@ -30,58 +28,60 @@ class KelasMatematika extends StatelessWidget {
                 },
                 child: Container(
                   margin: const EdgeInsets.all(10),
-                  child: Stack(children: <Widget>[
-                    Positioned(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 8.0, right: 8),
-                        child: Card(
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Container(
-                            height: 250,
-                            width: MediaQuery.of(context).size.width,
-                            decoration: BoxDecoration(
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 8.0, right: 8),
+                          child: Card(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                image: AssetImage(kelasMat.image),
-                                fit: BoxFit.cover,
+                            ),
+                            child: Container(
+                              height: 250,
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                image: DecorationImage(
+                                  image: AssetImage(kelasMat.image),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 90.0),
-                      child: Center(
-                        child: Container(
-                          width: MediaQuery.of(context).size.width - 60,
-                          height: MediaQuery.of(context).size.height * 0.1,
-                          decoration: const BoxDecoration(
-                            color: Colors.black38,
-                          ),
-                          child: Center(
-                            child: Text(
-                              kelasMat.title,
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white,
+                      Padding(
+                        padding: const EdgeInsets.only(top: 90.0),
+                        child: Center(
+                          child: Container(
+                            width: MediaQuery.of(context).size.width - 60,
+                            height: MediaQuery.of(context).size.height * 0.1,
+                            decoration: const BoxDecoration(
+                              color: Colors.black38,
+                            ),
+                            child: Center(
+                              child: Text(
+                                kelasMat.title,
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  ]),
+                    ],
+                  ),
                 ),
               );
             },
           ),
         ),
-      ),
+      ]),
     );
   }
 }
