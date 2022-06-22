@@ -35,6 +35,9 @@ class App extends StatelessWidget {
         '/bab7Indo': (context) => const BahasaIndonesiaBab7(),
         '/bab8Indo': (context) => const BahasaIndonesiaBab8(),
         '/bab9Indo': (context) => const BahasaIndonesiaBab9(),
+        '/bab7Mat': (context) => const MatematikaBab7(),
+        '/bab8Mat': (context) => const MatematikaBab8(),
+        '/bab9Mat': (context) => const MatematikaBab9(),
       },
     );
   }
