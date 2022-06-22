@@ -118,10 +118,14 @@ class HomeScreen extends StatelessWidget {
                   final MapelData mapel = MapelDataList[index];
                   return InkWell(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return HomeScreen();
-                      }));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return HomeScreen();
+                          },
+                        ),
+                      );
                     },
                     child: Container(
                       margin: const EdgeInsets.all(10),
