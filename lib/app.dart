@@ -34,6 +34,7 @@ class App extends StatelessWidget {
         '/catatan': (context) => const NoteScreen(),
         '/bab7Indo': (context) => const BahasaIndonesiaBab7(),
         '/bab8Indo': (context) => const BahasaIndonesiaBab8(),
+        '/bab9Indo': (context) => const BahasaIndonesiaBab9(),
       },
     );
   }
