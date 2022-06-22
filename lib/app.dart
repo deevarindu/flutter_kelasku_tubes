@@ -33,6 +33,7 @@ class App extends StatelessWidget {
         '/mapelDetail': (context) => const MapelDetailScreen(),
         '/catatan': (context) => const NoteScreen(),
         '/bab7Indo': (context) => const BahasaIndonesiaBab7(),
+        '/bab8Indo': (context) => const BahasaIndonesiaBab8(),
       },
     );
   }
