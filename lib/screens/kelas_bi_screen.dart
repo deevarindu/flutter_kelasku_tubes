@@ -5,11 +5,14 @@ import 'package:flutter_kelasku_tubes/screens/screens.dart';
 class KelasBahasaIndonesia extends StatelessWidget {
   const KelasBahasaIndonesia({Key? key}) : super(key: key);
 
+//MASIH ERROR YAK GES YAK
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Expanded(
-        child: Container(
+        child: SizedBox(
+          height: 100,
           child: ListView.builder(
             padding: const EdgeInsets.all(8),
             itemCount: KelasBIList.length,
