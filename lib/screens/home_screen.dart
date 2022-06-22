@@ -128,8 +128,7 @@ class HomeScreen extends StatelessWidget {
                       child: Stack(children: <Widget>[
                         Positioned(
                           child: Padding(
-                            padding:
-                                const EdgeInsets.only(left: 8.0, right: 8),
+                            padding: const EdgeInsets.only(left: 8.0, right: 8),
                             child: Card(
                               elevation: 5,
                               shape: RoundedRectangleBorder(
@@ -154,7 +153,7 @@ class HomeScreen extends StatelessWidget {
                           child: Center(
                             child: Container(
                               width: MediaQuery.of(context).size.width - 60,
-                              height:MediaQuery.of(context).size.height * 0.1,
+                              height: MediaQuery.of(context).size.height * 0.1,
                               decoration: BoxDecoration(
                                 color: Colors.black38,
                               ),
