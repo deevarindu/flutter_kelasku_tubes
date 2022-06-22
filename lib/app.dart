@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kelasku_tubes/screens/bab_indonesia_screen7.dart';
 import 'package:flutter_kelasku_tubes/screens/kalkulator_suhu_screen.dart';
+import 'package:flutter_kelasku_tubes/screens/kelas_bi_screen.dart';
+import 'package:flutter_kelasku_tubes/screens/kelas_mat_screen.dart';
 import 'package:flutter_kelasku_tubes/screens/note_screen.dart';
 
 import 'package:flutter_kelasku_tubes/screens/screens.dart';
@@ -38,6 +40,8 @@ class App extends StatelessWidget {
         '/bab7Mat': (context) => const MatematikaBab7(),
         '/bab8Mat': (context) => const MatematikaBab8(),
         '/bab9Mat': (context) => const MatematikaBab9(),
+        '/kelasBI': (context) => const KelasBahasaIndonesia(),
+        '/kelasMat': (context) => const KelasMatematika(),
       },
     );
   }
