@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kelasku_tubes/screens/kalkulator_suhu_screen.dart';
+import 'package:flutter_kelasku_tubes/screens/kelas_bi_screen.dart';
+import 'package:flutter_kelasku_tubes/screens/kelas_mat_screen.dart';
 import 'package:flutter_kelasku_tubes/screens/note_screen.dart';
 
 import 'package:flutter_kelasku_tubes/screens/screens.dart';
@@ -31,6 +33,14 @@ class App extends StatelessWidget {
         '/kalkulatorSuhu': (context) => const KalkulatorSuhuScreen(),
         '/mapelDetail': (context) => const MapelDetailScreen(),
         '/catatan': (context) => const NoteScreen(),
+        '/bab7Indo': (context) => const BahasaIndonesiaBab7(),
+        '/bab8Indo': (context) => const BahasaIndonesiaBab8(),
+        '/bab9Indo': (context) => const BahasaIndonesiaBab9(),
+        '/bab7Mat': (context) => const MatematikaBab7(),
+        '/bab8Mat': (context) => const MatematikaBab8(),
+        '/bab9Mat': (context) => const MatematikaBab9(),
+        '/kelasBI': (context) => const KelasBahasaIndonesia(),
+        '/kelasMat': (context) => const KelasMatematika(),
       },
     );
   }

@@ -112,7 +112,7 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             child: Container(
               child: ListView.builder(
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 itemCount: MapelDataList.length,
                 itemBuilder: (context, index) {
                   final MapelData mapel = MapelDataList[index];
@@ -124,12 +124,11 @@ class HomeScreen extends StatelessWidget {
                       }));
                     },
                     child: Container(
-                      margin: EdgeInsets.all(10),
+                      margin: const EdgeInsets.all(10),
                       child: Stack(children: <Widget>[
                         Positioned(
                           child: Padding(
-                            padding:
-                                const EdgeInsets.only(left: 8.0, right: 8),
+                            padding: const EdgeInsets.only(left: 8.0, right: 8),
                             child: Card(
                               elevation: 5,
                               shape: RoundedRectangleBorder(
@@ -154,14 +153,14 @@ class HomeScreen extends StatelessWidget {
                           child: Center(
                             child: Container(
                               width: MediaQuery.of(context).size.width - 60,
-                              height:MediaQuery.of(context).size.height * 0.1,
-                              decoration: BoxDecoration(
+                              height: MediaQuery.of(context).size.height * 0.1,
+                              decoration: const BoxDecoration(
                                 color: Colors.black38,
                               ),
                               child: Center(
                                 child: Text(
                                   mapel.title,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w600,
                                     color: Colors.white,

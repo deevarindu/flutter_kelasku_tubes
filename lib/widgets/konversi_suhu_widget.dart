@@ -21,12 +21,12 @@ class KonversiSuhu extends StatelessWidget {
       ),
       child: TextButton(
         style: TextButton.styleFrom(
-          backgroundColor: Color.fromARGB(255, 255, 169, 32),
+          backgroundColor: const Color.fromARGB(255, 255, 169, 32),
         ),
         onPressed: () {
           konversi();
         },
-        child: Text(
+        child: const Text(
           "Konversi Suhu",
           style: TextStyle(
             fontSize: 16,
