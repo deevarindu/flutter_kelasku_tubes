@@ -10,7 +10,7 @@ class BahasaIndonesiaBab7 extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.orange,
       appBar: AppBar(
-        title: const Text('Bahasa Indonesia'),
+        title: const Text('Bahasa Indonesia Kelas 7'),
       ),
       body: ListView.builder(
         padding: EdgeInsets.all(20),
