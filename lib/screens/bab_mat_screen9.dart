@@ -14,7 +14,7 @@ class MatematikaBab9 extends StatelessWidget {
       ),
       body: ListView.builder(
         padding: EdgeInsets.all(20),
-        itemCount: babList7.length,
+        itemCount: babList9Mat.length,
         itemBuilder: (context, index) {
           final Bab9Mat bab9 = babList9Mat[index];
           return Card(

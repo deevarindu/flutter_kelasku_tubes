@@ -14,7 +14,7 @@ class BahasaIndonesiaBab8 extends StatelessWidget {
       ),
       body: ListView.builder(
         padding: EdgeInsets.all(20),
-        itemCount: babList7.length,
+        itemCount: babList8.length,
         itemBuilder: (context, index) {
           final Bab8 bab8 = babList8[index];
           return Card(
