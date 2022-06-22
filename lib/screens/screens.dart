@@ -7,3 +7,6 @@ export 'add_screen.dart';
 export 'bab_indonesia_screen7.dart';
 export 'bab_indonesia_screen8.dart';
 export 'bab_indonesia_screen9.dart';
+export 'bab_mat_screen7.dart';
+export 'bab_mat_screen8.dart';
+export 'bab_mat_screen9.dart';
