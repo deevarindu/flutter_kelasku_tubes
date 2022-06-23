@@ -153,13 +153,15 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 90.0),
+                          padding: const EdgeInsets.only(top:3.0),
                           child: Center(
                             child: Container(
                               width: MediaQuery.of(context).size.width - 60,
-                              height: MediaQuery.of(context).size.height * 0.1,
-                              decoration: const BoxDecoration(
+                              height: MediaQuery.of(context).size.height * 0.37,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
                                 color: Colors.black38,
+                                
                               ),
                               child: Center(
                                 child: Text(
