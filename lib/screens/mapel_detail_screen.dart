@@ -6,7 +6,12 @@ import 'package:flutter_kelasku_tubes/widgets/widgets.dart';
 import 'package:http/http.dart' as http;
 
 class MapelDetailScreen extends StatelessWidget {
-  MapelDetailScreen({Key? key}) : super(key: key);
+  MapelDetailScreen({
+    Key? key,
+    this.nama_mapel,
+  }) : super(key: key);
+
+  final String? nama_mapel;
 
   late Future<List<SubBab>> futureMapels;
 
@@ -24,7 +29,10 @@ class MapelDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(''),
+        title: Text(
+          nama_mapel!,
+          style: TextStyle(fontSize: 14),
+        ),
       ),
       body: Container(
         child: FutureBuilder<List<SubBab>>(
@@ -35,7 +43,10 @@ class MapelDetailScreen extends StatelessWidget {
                 padding: EdgeInsets.all(10),
                 itemCount: snapshot.data.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return ListTile();
+                  return ListTile(
+                    leading: CircleAvatar(backgroundColor: Colors.orange),
+                    title: Text(snapshot.data[index]['judul_sub_bab']),
+                  );
                 },
               );
             } else {

@@ -108,7 +108,7 @@ class HomeScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return MapelDetailScreen();
+                            return MapelDetailScreen(nama_mapel: mapel.title);
                           },
                         ),
                       );

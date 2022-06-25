@@ -26,7 +26,7 @@ class App extends StatelessWidget {
         '/home': (context) => HomeScreen(),
         '/profile': (context) => const ProfileScreen(),
         '/kalkulatorSuhu': (context) => const KalkulatorSuhuScreen(),
-        '/mapelDetail': (context) => const MapelDetailScreen(),
+        '/mapelDetail': (context) => MapelDetailScreen(),
         '/kalender': (context) => KalenderApp(),
       },
     );
