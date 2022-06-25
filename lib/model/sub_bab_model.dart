@@ -1,19 +1,22 @@
 class SubBab {
-  int? id;
-  int? kelas;
-  String? nama_mapel;
+  int id;
+  int id_bab;
+  String judul_sub_bab;
+  String isi_sub_bab;
 
   SubBab({
-    this.id,
-    this.kelas,
-    this.nama_mapel,
+    required this.id,
+    required this.id_bab,
+    required this.judul_sub_bab,
+    required this.isi_sub_bab,
   });
 
   factory SubBab.fromJson(Map<String, dynamic> json) {
     return SubBab(
-      id: json['id'],
-      kelas: json['nama'],
-      nama_mapel: json['kelas'],
-    );
+      id : json['id'],
+      id_bab : json['id_bab'],
+      judul_sub_bab : json['judul_sub_bab'],
+      isi_sub_bab : json['isi_sub_bab'],
+      );
   }
 }
