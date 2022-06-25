@@ -19,12 +19,16 @@ class MapelDetailScreen extends StatefulWidget {
 
 class _MapelDetailScreenState extends State<MapelDetailScreen> {
   late Future<List<SubBab>> futureMapels;
-
+  final String Url = 'http://127.0.0.1:8000/api/subbabs';
   Future<List<SubBab>> fetchMapel() async {
-    http.Response response = await http.get(
-      Uri.parse('http://127.0.0.1:8000/api/mapels'),
-    );
-
+    var url = '$Url';
+    var headers = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    };
+    var response = await http.get(Uri.parse(url), headers: headers);
+    print(response.body);
+     
     List subbab = jsonDecode(response.body);
 
     return subbab.map((subbab) => SubBab.fromJson(subbab)).toList();
@@ -57,7 +61,7 @@ class _MapelDetailScreenState extends State<MapelDetailScreen> {
                   SubBab sub = snapshot.data![index];
                   return ListTile(
                     leading: CircleAvatar(backgroundColor: Colors.orange),
-                    title: Text(sub.nama_mapel),
+                    title: Text(sub.judul_sub_bab),
                   );
                 },
               );
