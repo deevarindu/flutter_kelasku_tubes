@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_kelasku_tubes/screens/screens.dart';
+import 'package:flutter_kelasku_tubes/model/models.dart';
+import 'package:http/http.dart' as http;
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -15,6 +19,24 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _visible = false;
   final formKey = GlobalKey<FormState>();
   String email = '';
+
+  late Future<List<Siswa>> futureSiswas;
+
+  Future<List<Siswa>> fetchSiswa() async {
+    http.Response response = await http.get(
+      Uri.parse('http://kelasku.test/api/siswa'),
+    );
+
+    List siswas = jsonDecode(response.body)['data'];
+
+    return siswas.map((siswa) => Siswa.fromJson(siswa)).toList();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    futureSiswas = fetchSiswa();
+  }
 
   void _hidePassword() {
     setState(() {
