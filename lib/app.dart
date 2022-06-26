@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_kelasku_tubes/screens/screens.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -28,6 +29,7 @@ class App extends StatelessWidget {
         '/kalkulatorSuhu': (context) => const KalkulatorSuhuScreen(),
         '/mapelDetail': (context) => MapelDetailScreen(),
         '/kalender': (context) => KalenderApp(),
+        '/gantiProfil': (context) => GantiProfileScreen(),
       },
     );
   }
