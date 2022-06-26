@@ -12,7 +12,7 @@ class ProfileScreen extends StatelessWidget {
   }) : super(key: key);
 
   final String? nama;
-  final String? kelas;
+  final int? kelas;
   final String? email;
   final String? password;
 
@@ -104,7 +104,7 @@ class ProfileScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          kelas!,
+                          '$kelas',
                           style: const TextStyle(
                             fontSize: 12,
                           ),

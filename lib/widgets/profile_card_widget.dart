@@ -11,7 +11,7 @@ class ProfileCard extends StatelessWidget {
   }) : super(key: key);
 
   String nama;
-  String kelas;
+  int kelas;
   String email;
   String password;
 
@@ -78,7 +78,7 @@ class ProfileCard extends StatelessWidget {
                       height: 5,
                     ),
                     Text(
-                      'Kelas ' + kelas,
+                      'Kelas ' + '$kelas',
                       style: const TextStyle(
                         fontSize: 12,
                         color: Colors.grey,
