@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
       errorSnackBar(context, 'enter all required fields');
     }
   }
-  
+
   void _hidePassword() {
     setState(() {
       _visible = !_visible;
@@ -136,13 +136,14 @@ class _LoginScreenState extends State<LoginScreen> {
                             onTap: _hidePassword,
                             onChanged: (value) {
                               password = value;
-                },
+                            },
                           ),
                           const SizedBox(height: 20),
                         ],
                       ),
                     ),
-                    Button(btnText: "Login", onBtnPressed: () => loginPressed()),
+                    Button(
+                        btnText: "Login", onBtnPressed: () => loginPressed()),
                   ],
                 ),
               ),

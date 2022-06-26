@@ -23,7 +23,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _visible = false;
   final formKey = GlobalKey<FormState>();
   String nama = '';
-  late int kelas ;
+  late int kelas;
   String email = '';
   String password = '';
 
@@ -39,10 +39,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (BuildContext context) => LoginScreen(),
+              builder: (BuildContext context) => HomeScreen(
+                  nama: nama, kelas: kelas, email: email, password: password),
             ));
-        
-            
       } else {
         errorSnackBar(context, responseMap.values.first[0]);
       }
@@ -182,8 +181,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             },
                             onChanged: (value) {
                               email = value;
-              },
-                            
+                            },
                           ),
                           const SizedBox(height: 20),
                           TextFormField(
@@ -205,15 +203,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             onTap: _hidePassword,
                             onChanged: (value) {
                               password = value;
-              },
+                            },
                           ),
-                          
                           const SizedBox(height: 20),
                         ],
                       ),
-                      
                     ),
-                    Button(btnText: "Register", onBtnPressed: () => registerPressed()),
+                    Button(
+                        btnText: "Register",
+                        onBtnPressed: () => registerPressed()),
                   ],
                 ),
               ),

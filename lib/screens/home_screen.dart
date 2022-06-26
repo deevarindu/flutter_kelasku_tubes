@@ -6,17 +6,28 @@ import 'package:flutter_kelasku_tubes/widgets/widgets.dart';
 import 'package:http/http.dart' as http;
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({
+    Key? key,
+    this.nama,
+    this.kelas,
+    this.email,
+    this.password,
+  }) : super(key: key);
+
+  String? nama;
+  int? kelas;
+  String? email;
+  String? password;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String nama = 'Deeva Rindu Wijarista P';
-  int kelas = 7;
-  String email = 'Email@gmail.com';
-  String password = '121212';
+  String? nama;
+  int? kelas;
+  String? email;
+  String? password;
 
   var scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -41,6 +52,10 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     futureMapels = fetchMapel();
+    nama = widget.nama;
+    kelas = widget.kelas;
+    email = widget.email;
+    password = widget.password;
   }
 
   @override
@@ -116,7 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ProfileCard(
-              nama: nama, kelas: kelas, email: email, password: password),
+              nama: nama!, kelas: kelas!, email: email!, password: password!),
           Container(
             margin: const EdgeInsets.only(bottom: 15, left: 30),
             child: const Text(
