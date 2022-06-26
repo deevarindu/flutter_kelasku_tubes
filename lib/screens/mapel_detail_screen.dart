@@ -8,14 +8,10 @@ import 'package:http/http.dart' as http;
 class MapelDetailScreen extends StatefulWidget {
   MapelDetailScreen({
     Key? key,
-    this.id,
-    this.kelas,
-    this.nama_mapel,
+    this.mapel,
   }) : super(key: key);
 
-  final int? id;
-  final int? kelas;
-  final String? nama_mapel;
+  Mapel? mapel;
 
   @override
   State<MapelDetailScreen> createState() => _MapelDetailScreenState();
@@ -45,7 +41,7 @@ class _MapelDetailScreenState extends State<MapelDetailScreen> {
   void initState() {
     super.initState();
     futureBabs = fetchBab();
-    kelas = widget.kelas!;
+    kelas = widget.mapel!.kelas;
   }
 
   @override
@@ -53,7 +49,7 @@ class _MapelDetailScreenState extends State<MapelDetailScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          widget.nama_mapel!,
+          widget.mapel!.nama_mapel!,
           style: TextStyle(fontSize: 14),
         ),
       ),
