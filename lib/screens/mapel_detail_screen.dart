@@ -8,9 +8,13 @@ import 'package:http/http.dart' as http;
 class MapelDetailScreen extends StatefulWidget {
   MapelDetailScreen({
     Key? key,
+    this.id,
+    this.kelas,
     this.nama_mapel,
   }) : super(key: key);
 
+  final int? id;
+  final String? kelas;
   final String? nama_mapel;
 
   @override
@@ -19,7 +23,8 @@ class MapelDetailScreen extends StatefulWidget {
 
 class _MapelDetailScreenState extends State<MapelDetailScreen> {
   late Future<List<SubBab>> futureMapels;
-  final String Url = 'http://127.0.0.1:8000/api/subbabs';
+
+  final String Url = 'http://kelasku.test/api/subbabs';
   Future<List<SubBab>> fetchMapel() async {
     var url = '$Url';
     var headers = {
@@ -27,19 +32,19 @@ class _MapelDetailScreenState extends State<MapelDetailScreen> {
       'Accept': 'application/json',
     };
     var response = await http.get(Uri.parse(url), headers: headers);
-    print(response.body);
-     
-    List subbab = jsonDecode(response.body);
+    // print(response.body);
 
-    return subbab.map((subbab) => SubBab.fromJson(subbab)).toList();
+    List subbab = jsonDecode(response.body)['data'];
+
+    return subbab.map((sub_babs) => SubBab.fromJson(sub_babs)).toList();
   }
 
   @override
-
-  void initState(){
+  void initState() {
     super.initState();
     futureMapels = fetchMapel();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,25 +57,22 @@ class _MapelDetailScreenState extends State<MapelDetailScreen> {
       body: Container(
         child: FutureBuilder<List<SubBab>>(
           future: futureMapels,
-          builder: (context,snapshot) {
+          builder: (context, snapshot) {
             if (snapshot.hasData) {
               return ListView.builder(
                 padding: EdgeInsets.all(10),
                 itemCount: snapshot.data!.length,
-                itemBuilder: (context,index) {
-                  SubBab sub = snapshot.data![index];
+                itemBuilder: (context, index) {
+                  SubBab subbab = snapshot.data![index];
                   return ListTile(
-                    leading: CircleAvatar(backgroundColor: Colors.orange),
-                    title: Text(sub.judul_sub_bab),
+                    title: Text(subbab.judul_sub_bab),
                   );
                 },
               );
-            } 
-            else if(snapshot.hasError){
-              return Text("Data Belum Masuk");  
+            } else if (snapshot.hasError) {
+              return Text("Data Belum Masuk");
             }
-            
-            return Center(child:Text("Sorry Error"));
+            return Center(child: Text("Load Bab"));
           },
         ),
       ),

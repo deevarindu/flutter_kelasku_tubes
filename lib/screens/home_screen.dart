@@ -52,9 +52,12 @@ class HomeScreen extends StatelessWidget {
       ),
       appBar: AppBar(
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            title(),
+            Container(
+              margin: const EdgeInsets.only(right: 56),
+              child: title(),
+            ),
             PopupMenuButton<String>(
               onSelected: (String value) {
                 if (value == 'Logout') {
@@ -108,7 +111,10 @@ class HomeScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return MapelDetailScreen(nama_mapel: mapel.title);
+                            return MapelDetailScreen(
+                                id: mapel.id,
+                                kelas: kelas,
+                                nama_mapel: mapel.title);
                           },
                         ),
                       );
