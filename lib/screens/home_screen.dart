@@ -7,7 +7,7 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
   String nama = 'Deeva Rindu Wijarista P';
-  String kelas = '7';
+  int kelas = 7;
   String email = 'Email@gmail.com';
   String password = '121212';
 

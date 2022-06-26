@@ -14,7 +14,7 @@ class MapelDetailScreen extends StatefulWidget {
   }) : super(key: key);
 
   final int? id;
-  final String? kelas;
+  final int? kelas;
   final String? nama_mapel;
 
   @override
@@ -22,27 +22,30 @@ class MapelDetailScreen extends StatefulWidget {
 }
 
 class _MapelDetailScreenState extends State<MapelDetailScreen> {
-  late Future<List<SubBab>> futureMapels;
+  late Future<List<Bab>> futureBabs;
 
-  final String Url = 'http://kelasku.test/api/subbabs';
-  Future<List<SubBab>> fetchMapel() async {
+  int? kelas;
+
+  final String Url = 'http://kelasku.test/api/babs';
+  Future<List<Bab>> fetchBab() async {
     var url = '$Url';
     var headers = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
     };
     var response = await http.get(Uri.parse(url), headers: headers);
-    // print(response.body);
+    print(response.body);
 
-    List subbab = jsonDecode(response.body)['data'];
+    List bab = jsonDecode(response.body)['data'];
 
-    return subbab.map((sub_babs) => SubBab.fromJson(sub_babs)).toList();
+    return bab.map((babs) => Bab.fromJson(babs)).toList();
   }
 
   @override
   void initState() {
     super.initState();
-    futureMapels = fetchMapel();
+    futureBabs = fetchBab();
+    kelas = widget.kelas!;
   }
 
   @override
@@ -55,17 +58,17 @@ class _MapelDetailScreenState extends State<MapelDetailScreen> {
         ),
       ),
       body: Container(
-        child: FutureBuilder<List<SubBab>>(
-          future: futureMapels,
+        child: FutureBuilder<List<Bab>>(
+          future: futureBabs,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return ListView.builder(
                 padding: EdgeInsets.all(10),
                 itemCount: snapshot.data!.length,
                 itemBuilder: (context, index) {
-                  SubBab subbab = snapshot.data![index];
+                  Bab bab = snapshot.data![index];
                   return ListTile(
-                    title: Text(subbab.judul_sub_bab),
+                    title: Text(bab.judul_bab),
                   );
                 },
               );
