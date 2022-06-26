@@ -52,12 +52,6 @@ class ProfileScreen extends StatelessWidget {
             children: [
               Image.asset('assets/images/user.png', width: 100, height: 100),
               const SizedBox(height: 8),
-              TextButton(
-                onPressed: () {},
-                child: const Text(
-                  'Ubah Foto Profil',
-                ),
-              ),
               const SizedBox(height: 16),
               GestureDetector(
                 onTap: () {},
@@ -191,7 +185,6 @@ class ProfileScreen extends StatelessWidget {
                 },
                 child: const Text(
                   'Ubah Profil',
-                  style: TextStyle(color: Colors.red),
                 ),
               ),
               TextButton(
@@ -199,7 +192,7 @@ class ProfileScreen extends StatelessWidget {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const LoginScreen(),
+                      builder: (context) => LoginScreen(),
                     ),
                   );
                 },
@@ -324,12 +317,6 @@ class _GantiProfileScreenState extends State<GantiProfileScreen> {
                       Image.asset('assets/images/user.png',
                           width: 100, height: 100),
                       const SizedBox(height: 8),
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          'Ubah Foto Profil',
-                        ),
-                      ),
                       const SizedBox(height: 16),
                       GestureDetector(
                         onTap: () {},

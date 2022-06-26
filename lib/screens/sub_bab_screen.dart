@@ -5,25 +5,25 @@ import 'package:flutter_kelasku_tubes/screens/screens.dart';
 import 'package:flutter_kelasku_tubes/widgets/widgets.dart';
 import 'package:http/http.dart' as http;
 
-class MapelDetailScreen extends StatefulWidget {
-  MapelDetailScreen({
+class SubBabScreen extends StatefulWidget {
+  SubBabScreen({
     Key? key,
-    this.mapel,
+    this.bab,
   }) : super(key: key);
 
-  Mapel? mapel;
+  Bab? bab;
 
   @override
-  State<MapelDetailScreen> createState() => _MapelDetailScreenState();
+  State<SubBabScreen> createState() => _SubBabScreenState();
 }
 
-class _MapelDetailScreenState extends State<MapelDetailScreen> {
-  late Future<List<Bab>> futureBabs;
+class _SubBabScreenState extends State<SubBabScreen> {
+  late Future<List<SubBab>> futureSubBabs;
 
-  Mapel? mapel;
+  Bab? bab;
 
-  final String Url = 'http://kelasku.test/api/babs';
-  Future<List<Bab>> fetchBab() async {
+  final String Url = 'http://kelasku.test/api/subbabs';
+  Future<List<SubBab>> fetchSubBab() async {
     var url = '$Url';
     var headers = {
       'Content-Type': 'application/json',
@@ -32,16 +32,16 @@ class _MapelDetailScreenState extends State<MapelDetailScreen> {
     var response = await http.get(Uri.parse(url), headers: headers);
     print(response.body);
 
-    List bab = jsonDecode(response.body)['data'];
+    List subbab = jsonDecode(response.body)['data'];
 
-    return bab.map((babs) => Bab.fromJson(babs)).toList();
+    return subbab.map((subbabs) => SubBab.fromJson(subbabs)).toList();
   }
 
   @override
   void initState() {
     super.initState();
-    futureBabs = fetchBab();
-    mapel = widget.mapel!;
+    futureSubBabs = fetchSubBab();
+    bab = widget.bab!;
   }
 
   @override
@@ -49,33 +49,34 @@ class _MapelDetailScreenState extends State<MapelDetailScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          widget.mapel!.nama_mapel!,
+          widget.bab!.judul_bab,
           style: TextStyle(fontSize: 16),
         ),
       ),
       body: Container(
-        child: FutureBuilder<List<Bab>>(
-          future: futureBabs,
+        child: FutureBuilder<List<SubBab>>(
+          future: futureSubBabs,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return ListView.builder(
                 padding: EdgeInsets.all(10),
                 itemCount: snapshot.data!.length,
                 itemBuilder: (context, index) {
-                  Bab bab = snapshot.data![index];
-                  if (bab.id_mapel == mapel!.id) {
+                  SubBab subBab = snapshot.data![index];
+                  if (subBab.id_bab == bab!.id) {
                     return ListTile(
                       title: GestureDetector(
                         onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SubBabScreen(bab: bab),
+                              builder: (context) =>
+                                  MateriScreen(subBab: subBab),
                             ),
                           );
                         },
                         child: Text(
-                          bab.judul_bab,
+                          subBab.judul_sub_bab,
                           style: TextStyle(fontSize: 12),
                         ),
                       ),

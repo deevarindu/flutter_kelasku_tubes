@@ -5,3 +5,5 @@ export 'profile_screen.dart';
 export 'mapel_detail_screen.dart';
 export 'kalkulator_suhu_screen.dart';
 export 'kalender.dart';
+export 'sub_bab_screen.dart';
+export 'materi_screen.dart';

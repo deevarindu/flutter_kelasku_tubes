@@ -40,7 +40,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
             context,
             MaterialPageRoute(
               builder: (BuildContext context) => HomeScreen(
-                  nama: nama, kelas: kelas, email: email, password: password),
+                nama: nama,
+                kelas: kelas,
+                email: email,
+                password: password,
+              ),
             ));
       } else {
         errorSnackBar(context, responseMap.values.first[0]);
@@ -95,7 +99,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const LoginScreen(),
+                                builder: (context) => LoginScreen(),
                               ),
                             );
                           },
