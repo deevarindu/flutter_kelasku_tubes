@@ -1,6 +1,11 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_kelasku_tubes/screens/screens.dart';
 import 'package:flutter_kelasku_tubes/widgets/widgets.dart';
+import 'package:http/http.dart' as http;
+import 'package:flutter_kelasku_tubes/service/auth_services.dart';
+import 'package:flutter_kelasku_tubes/service/globals.dart';
+import 'package:flutter_kelasku_tubes/widgets/button.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -17,7 +22,34 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   bool _visible = false;
   final formKey = GlobalKey<FormState>();
+  String nama = '';
+  late int kelas ;
   String email = '';
+  String password = '';
+
+  registerPressed() async {
+    bool emailValid = RegExp(
+            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        .hasMatch(email);
+    if (emailValid) {
+      http.Response response =
+          await AuthServices.register(nama, kelas, email, password);
+      Map responseMap = jsonDecode(response.body);
+      if (response.statusCode == 200) {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) => LoginScreen(),
+            ));
+        
+            
+      } else {
+        errorSnackBar(context, responseMap.values.first[0]);
+      }
+    } else {
+      errorSnackBar(context, 'email not valid');
+    }
+  }
 
   void _hidePassword() {
     setState(() {
@@ -25,21 +57,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
     });
   }
 
-  String selectedDropdown = "Pilih Kelas";
+  // String selectedDropdown = "Pilih Kelas";
 
-  List<String> classes = [
-    "Pilih Kelas",
-    "12-MM 1",
-    "12-MM 2",
-    "12-MM 3",
-  ];
+  // List<String> classes = [
+  //   "Pilih Kelas",
+  //   "7",
+  //   "8",
+  //   "9",
+  // ];
 
-  void onDropdownChanged(String? value) {
-    return setState(() {
-      selectedDropdown = value.toString();
-      _classController = TextEditingController(text: selectedDropdown);
-    });
-  }
+  // void onDropdownChanged(String? value) {
+  //   return setState(() {
+  //     selectedDropdown = value.toString();
+  //     _classController = TextEditingController(text: selectedDropdown);
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -101,30 +133,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 )),
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'Please enter name';
-                              }
-                              return null;
+                            onChanged: (value) {
+                              nama = value;
                             },
                           ),
-                          const SizedBox(height: 20),
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(
-                                color: Colors.grey,
-                                width: 1,
-                              ),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: ClassesDropdown(
-                                selectedDropdown: selectedDropdown,
-                                listItem: classes,
-                                onDropdownChanged: onDropdownChanged,
-                              ),
-                            ),
+                          SizedBox(height: 20),
+                          TextFormField(
+                            controller: _classController,
+                            decoration: InputDecoration(
+                                labelText: 'Class',
+                                labelStyle: const TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                )),
+                            onChanged: (value) {
+                              kelas = int.parse(value);
+                            },
                           ),
                           const SizedBox(height: 20),
                           TextFormField(
@@ -153,6 +180,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             onSaved: (value) {
                               email = value!;
                             },
+                            onChanged: (value) {
+                              email = value;
+              },
+                            
                           ),
                           const SizedBox(height: 20),
                           TextFormField(
@@ -172,52 +203,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 )),
                             obscureText: _visible,
                             onTap: _hidePassword,
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'Please enter password';
-                              } else if (value.length > 7 || value.length < 5) {
-                                return 'Password must be 6 character';
-                              }
-                              return null;
-                            },
+                            onChanged: (value) {
+                              password = value;
+              },
                           ),
+                          
                           const SizedBox(height: 20),
                         ],
                       ),
+                      
                     ),
-                    TextButton(
-                      onPressed: () {
-                        if (formKey.currentState!.validate()) {
-                          formKey.currentState!.save();
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => HomeScreen(),
-                            ),
-                          );
-                        }
-                      },
-                      child: Container(
-                        height: 45,
-                        width: double.infinity,
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        decoration: const BoxDecoration(
-                          color: Color.fromARGB(255, 255, 169, 32),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ),
-                        ),
-                        child: const Text(
-                          'Register',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
+                    Button(btnText: "Register", onBtnPressed: () => registerPressed()),
                   ],
                 ),
               ),

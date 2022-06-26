@@ -24,7 +24,7 @@ class MapelDetailScreen extends StatefulWidget {
 class _MapelDetailScreenState extends State<MapelDetailScreen> {
   late Future<List<SubBab>> futureMapels;
 
-  final String Url = 'http://kelasku.test/api/subbabs';
+  final String Url = 'http://127.0.0.1:8000/api/subbabs';
   Future<List<SubBab>> fetchMapel() async {
     var url = '$Url';
     var headers = {
