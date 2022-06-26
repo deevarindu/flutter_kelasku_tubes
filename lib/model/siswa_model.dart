@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 class Siswa {
   int? id;
   String? nama;
-  String? kelas;
+  int? kelas;
   String? email;
   String? password;
 
