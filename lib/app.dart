@@ -19,7 +19,7 @@ class App extends StatelessWidget {
           foregroundColor: Colors.black,
         ),
       ),
-      home: HomeScreen(),
+      home: LoginScreen(),
       routes: {
         '/login': (context) => const LoginScreen(),
         '/register': (context) => const RegisterScreen(),
